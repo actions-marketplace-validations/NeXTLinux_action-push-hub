@@ -1,5 +1,8 @@
 name: 'Action Push Hub'
 description: 'push the executor to hub'
+branding:
+  icon: 'hard-drive'
+  color: 'green'
 inputs:
   git_tag:
     description: 'the versioning tag of the executor'
