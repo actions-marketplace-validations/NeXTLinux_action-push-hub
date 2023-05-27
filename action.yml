@@ -1,0 +1,26 @@
+name: 'Action Push Hub'
+description: 'push the executor to hub'
+inputs:
+  git_tag:
+    description: 'the versioning tag of the executor'
+    required: true
+  push_dir:
+    description: 'the directory with the executor source code'
+    required: false
+    default: '.'
+  platform:
+    description: 'Platform parameter for the push'
+    required: false
+    default: ''
+outputs:
+  exit_code:
+    description: 'exit successfully with 0'
+    value: ${{ steps.push_exec.outputs.exit_code }}
+runs:
+  using: 'composite'
+  steps:
+    - id: push_exec
+      run: |
+        ${{ github.action_path }}/push.sh ${{ inputs.git_tag }} ${{ inputs.push_dir }} ${{inputs.platform}}
+        echo "::set-output name=exit_code::$(echo $exit_code)"
+      shell: bash
