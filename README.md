@@ -1,4 +1,4 @@
-# Push the executor to Action
+# Push the executor to Hub
 
 Push the executor to hub with the tags `$git_tag` and `latest`
 
