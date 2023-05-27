@@ -12,7 +12,7 @@ You need to pass this to the action like so:
       - name: action to push
         uses: nextlinux/action-push-hub@v3
         env: 
-          jinahub_token: ${{ secrets.nextlinuxhub_token }}
+          nextlinuxhub_token: ${{ secrets.nextlinuxhub_token }}
 ```
 
 If you want to release the GPU version, make sure you have `Dockerfile.gpu` in your root folder
